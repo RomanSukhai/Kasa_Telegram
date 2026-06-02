@@ -1,0 +1,21 @@
+name: Test Schedule
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print trigger info
+        run: |
+          echo "EVENT_NAME=$GITHUB_EVENT_NAME"
+          echo "REF=$GITHUB_REF"
+          echo "SHA=$GITHUB_SHA"
+          date -u
