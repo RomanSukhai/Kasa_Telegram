@@ -2,10 +2,12 @@ name: Daily Kasa Telegram Report
 
 on:
   schedule:
-    # 21:30 по Україні влітку = 18:30 UTC
     - cron: "30 18 * * *"
 
   workflow_dispatch:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   send-report:
