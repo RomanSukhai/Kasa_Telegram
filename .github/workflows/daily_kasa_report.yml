@@ -1,6 +1,6 @@
 name: Daily Kasa Telegram Report
 
-on:
+"on":
   schedule:
     - cron: "*/5 * * * *"
   workflow_dispatch:
