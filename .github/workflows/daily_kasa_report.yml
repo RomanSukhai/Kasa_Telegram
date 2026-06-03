@@ -25,6 +25,13 @@ jobs:
         run: |
           pip install -r requirements.txt
 
+      - name: Show time
+        run: |
+          echo "UTC time:"
+          date -u
+          echo "Kyiv time:"
+          TZ=Europe/Kyiv date
+
       - name: Run Checkbox report
         env:
           CHECKBOX_LICENSE_KEY: ${{ secrets.CHECKBOX_LICENSE_KEY }}
@@ -33,11 +40,5 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           CHECKBOX_CLIENT_NAME: roman-kasa-report
           CHECKBOX_CLIENT_VERSION: 1.0.0
-      - name: Show time
-        run: |
-          echo "UTC time:"
-          date -u
-          echo "Kyiv time:"
-          TZ=Europe/Kyiv date
         run: |
           python main2.py
