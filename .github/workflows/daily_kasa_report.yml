@@ -2,7 +2,7 @@ name: Daily Kasa Telegram Report
 
 "on":
   schedule:
-    - cron: "26 8 * * *"
+    - cron: "40 8 * * *"
   workflow_dispatch:
 
 env:
